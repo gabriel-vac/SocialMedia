@@ -5,6 +5,7 @@ import {
   View,
   Text,
   FlatList,
+  StatusBar,
 } from 'react-native';
 import Title from './components/Title/Title';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
@@ -12,6 +13,7 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import globalStyle from './assets/styles/globalStyle';
 import UserStory from './components/UserStory/UserStory';
 import UserPost from './components/UserPost/UserPost';
+import { scaleFontSize } from './assets/styles/scaling';
 const App = () => {
   const userStories = [
     {
@@ -151,6 +153,7 @@ const App = () => {
 
   return (
     <SafeAreaView>
+      <StatusBar backgroundColor={'transparent'} barStyle={'dark-content'} />
       <View>
         <FlatList
           ListHeaderComponent={
@@ -160,7 +163,7 @@ const App = () => {
                 <TouchableOpacity style={globalStyle.messageIcon}>
                   <FontAwesomeIcon
                     icon={faEnvelope}
-                    size={20}
+                    size={scaleFontSize(20)}
                     color={'#898DAE'}
                   />
                   <View style={globalStyle.messageNumberContainer}>

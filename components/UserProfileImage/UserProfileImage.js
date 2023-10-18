@@ -1,16 +1,20 @@
 import React from 'react';
 
 import PropTypes from 'prop-types';
-import {Image, View} from 'react-native';
+import { Image, View } from 'react-native';
 import style from './style';
 
-const UserProfileImage = props => {
+const UserProfileImage = (props) => {
   return (
     <View
-      style={[style.userImageContainer, {borderRadius: props.imageDimensions}]}>
+      style={[
+        style.userImageContainer,
+        { borderRadius: props.imageDimensions },
+      ]}
+    >
       <Image
         source={props.profileImage}
-        style={{width: props.imageDimensions, height: props.imageDimensions}}
+        style={{ width: props.imageDimensions, height: props.imageDimensions }}
       />
     </View>
   );
