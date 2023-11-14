@@ -4,9 +4,81 @@ import Home from '../screens/Home/Home';
 import { Routes } from './Routes';
 import Profile from '../screens/Profile/Profile';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import { Text, View } from 'react-native';
+import ProfileTabTitle from '../components/ProfileTabTitle/ProfileTabTitle';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
+const ProfileTabs = createMaterialTopTabNavigator();
+
+const Tab1 = () => {
+  return (
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Tab 1</Text>
+    </View>
+  );
+};
+
+const Tab2 = () => {
+  return (
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Tab 1</Text>
+    </View>
+  );
+};
+
+const Tab3 = () => {
+  return (
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Tab 1</Text>
+    </View>
+  );
+};
+
+export const ProfileTabsNavigation = () => {
+  return (
+    <ProfileTabs.Navigator
+      screenOptions={{
+        tabBarIndicatorStyle: {
+          backgroundColor: 'transparent',
+        },
+        tabBarStyle: {
+          zIndex: 0, // remove the tabBar bottom width detail
+          elevation: 0,
+        },
+      }}
+    >
+      <ProfileTabs.Screen
+        name="Tab1"
+        component={Tab1}
+        options={{
+          tabBarLabel: ({ focused }) => (
+            <ProfileTabTitle isFocused={focused} title={'Photos'} />
+          ),
+        }}
+      />
+      <ProfileTabs.Screen
+        name="Tab2"
+        component={Tab2}
+        options={{
+          tabBarLabel: ({ focused }) => (
+            <ProfileTabTitle isFocused={focused} title={'Videos'} />
+          ),
+        }}
+      />
+      <ProfileTabs.Screen
+        name="Tab3"
+        component={Tab3}
+        options={{
+          tabBarLabel: ({ focused }) => (
+            <ProfileTabTitle isFocused={focused} title={'Saved'} />
+          ),
+        }}
+      />
+    </ProfileTabs.Navigator>
+  );
+};
 
 const MainMenuNavigation = () => {
   return (
