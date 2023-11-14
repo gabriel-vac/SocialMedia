@@ -16,6 +16,22 @@ const Profile = ({ navigation }) => {
           </View>
         </View>
         <Text style={style.userName}>Gabriel Guilhen</Text>
+        <View style={style.statContainer}>
+          <View>
+            <Text style={style.statAmount}>45</Text>
+            <Text style={style.statType}>Following</Text>
+          </View>
+          <View style={style.statBorder} />
+          <View>
+            <Text style={style.statAmount}>200</Text>
+            <Text style={style.statType}>Followers</Text>
+          </View>
+          <View style={style.statBorder} />
+          <View>
+            <Text style={style.statAmount}>100</Text>
+            <Text style={style.statType}>Posts</Text>
+          </View>
+        </View>
       </ScrollView>
     </SafeAreaView>
   );

@@ -11,7 +11,7 @@ const Drawer = createDrawerNavigator();
 const MainMenuNavigation = () => {
   return (
     <Drawer.Navigator
-    // screenOptions={{ header: () => null, headerShown: false }}
+      screenOptions={{ header: () => null, headerShown: false }}
     >
       <Drawer.Screen name={Routes.Home} component={Home} />
       <Drawer.Screen
