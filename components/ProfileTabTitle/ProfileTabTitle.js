@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import style from './style';
 
 const ProfileTabTitle = ({ title, isFocused }) => {
-  console.log(isFocused);
   return (
     <View>
       <Text style={[style.title, !isFocused && style.titleNotFocused]}>
